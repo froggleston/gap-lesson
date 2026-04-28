@@ -95,7 +95,6 @@ gap> AllSmallGroups(Size,24,TestOneGroup,true);
 Why is returning booleans a good design decision for such functions,
 instead of just printing information or returning a string such as `"YES"` ?
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 This is a simple example of a function which tests all groups of a given order.
@@ -140,7 +139,6 @@ fail
 - Use iteration over `[1..NrSmallGroups(n)]` as shown in the function above
 - Use `IdsOfAllSmallGroups` which accepts same arguments as `AllSmallGroups`
   but returns ids instead of groups.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -294,14 +292,13 @@ a break loop, designated by the break prompt `brk>`. You can leave it by
 typing `quit;` (beware of pressing Ctrl-C twice within a second -- that will
 terminate GAP session completely).
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 This is another situation where theoretical knowledge helps much more than the
-brute-force approach. If the group is a *p*\-group, then the order of each
-conjugacy class of a non-identity element of the group is divisible by *p*;
+brute-force approach. If the group is a _p_\-group, then the order of each
+conjugacy class of a non-identity element of the group is divisible by _p_;
 therefore, the average order of a group element may not be an integer. Therefore,
-*p*\-groups can be excluded from calculation. So, the new version of the code is
+_p_\-groups can be excluded from calculation. So, the new version of the code is
 
 ```gap
 TestRangeOfOrders:=function(f,n1,n2)
@@ -477,11 +474,10 @@ gap> SetInfoLevel( InfoSmallGroupsSearch, INFO_SSS);
 - Can you estimate how long it may take to check all 408641062 groups of order 1536?
 
 - How many groups of order not higher than 2000 might you be able to check,
-  excluding *p*\-groups and those of order 1536?
+  excluding _p_\-groups and those of order 1536?
 
 - Can you find another group with this property in the Small Groups Library
   (of order not equal to 1536)?
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

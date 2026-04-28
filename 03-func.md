@@ -18,7 +18,7 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Just to remind us of our task: for a finite group *G*, we would like to calculate
+Just to remind us of our task: for a finite group _G_, we would like to calculate
 the average order of its elements (that is, the sum of the orders of its elements
 divided by the order of the group).
 
@@ -97,9 +97,8 @@ sum:=0;; for g in S do sum := sum + Order(g); od; sum/Size(S);
   have to be changed;
 - **last, but not least:** when GAP code is pasted into the interpreter, it is evaluated line
   by line. If you have a long file with many commands, and a syntax error is
-  in line *N*, this error will be reported only when GAP completes
+  in line _N_, this error will be reported only when GAP completes
   the evaluation of all preceding lines, and that might be quite time-consuming.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -276,7 +275,7 @@ AvgOrdOfGroup(M11);
 6.70846
 ```
 
-Now let's see an example of a *warning*. Since it is only a warning, it will
+Now let's see an example of a _warning_. Since it is only a warning, it will
 redefine the function, and this may cause some unexpected result. To see what
 could happen, first edit the file to roll back the change in the type of the
 result (so it will return a rational instead of a float), and then comment

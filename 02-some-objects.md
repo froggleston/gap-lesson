@@ -21,7 +21,7 @@ So far we have met three types of GAP types:
 
 - simple objects such as integers, rationals, booleans, permutations;
 
-- composite objects such as *lists*;
+- composite objects such as _lists_;
 
 - objects with more complex internal representation, such as groups.
 
@@ -62,8 +62,8 @@ Z(5)^0
 
 You already know about lists.
 Another type of composite objects is **records**. While a list contains subobjects indexed
-by their positions in the list, a record contains subobjects, called *record
-components*, which are indexed by their names. Elements of a record are accessed with `.`
+by their positions in the list, a record contains subobjects, called _record
+components_, which are indexed by their names. Elements of a record are accessed with `.`
 
 ```gap
 date:= rec(year:= 2015, month:= "Nov", day:= 17);
@@ -201,7 +201,6 @@ it also iterates over another list of the same length as `c` in the call
 to `Maximum`. If the list is long, this will impose certain performance
 and memory penalties. Try to write code that finds the letters that occur most
 in `c` without producing an intermediate list.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

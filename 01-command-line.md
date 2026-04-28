@@ -1,14 +1,14 @@
 ---
-title: First session with GAP
+title: Перша сесія з GAP
 teaching: 30
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Time-saving tips and tricks
-- Using GAP's help system
-- Basic objects and constructions in the GAP language
+- Поради та підказки, які заощадять час
+- Використання довідкової системи GAP
+- Базові об'єкти та конструкції в мові GAP
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -18,11 +18,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-If GAP is installed correctly you should be able to start it. Exactly how
-you start GAP will depend on your operating system and how you installed
-GAP. GAP starts with the *banner* displaying information about the version of
-the system and loaded components, and then displays the command line prompt
-`gap>`, for example:
+Якщо GAP встановлено правильно, ви повинні мати можливість його запустити. Як саме це зробити, залежатиме від вашої операційної системи та способу встановлення GAP. Після запуску, GAP виведе на екран свій _банер_, який відображає інформацію про версію системи та завантажені компоненти, а потім запрошення командного рядка `gap>`, наприклад:
 
 ```output
  ┌───────┐   GAP 4.9.2 of 04-Jul-2018
@@ -41,17 +37,13 @@ the system and loaded components, and then displays the command line prompt
 gap>
 ```
 
-To leave GAP, type `quit;` at the GAP prompt. Remember that all GAP commands,
-including this one, must be finished with a semicolon! Practice entering
-`quit;` to leave GAP, and then starting a new GAP session. Before continuing, you
-may wish to enter the following command to display GAP prompts and user inputs
-in different colours:
+Щоб вийти з GAP, введіть `quit;` у командному рядку GAP. Пам’ятайте, що всі команди GAP, включно з цією, мають закінчуватися крапкою з комою! Потренуйтеся вводити `quit;`, щоб вийти з GAP, а потім починати новий сеанс GAP. Перш ніж продовжити, ви можливо забажаєте ввести наступну команду, щоб відображати запрошення GAP та команди, введені користувачем у різних кольорах:
 
 ```gap
  ColorPrompt(true);
 ```
 
-The easiest way to start trying GAP out is as a calculator:
+Найпростіший шлях розпочати роботу з GAP - це використовувати GAP як калькулятор:
 
 ```gap
 ( 1 + 2^32 ) / (1 - 2*3*107 );
@@ -61,35 +53,31 @@ The easiest way to start trying GAP out is as a calculator:
 -6700417
 ```
 
-If you want to record what you did in a GAP session, so you can look over it
-later, you can enable logging with the `LogTo` function, like this.
+Якщо ви хочете записати те, що ви робили під час сеансу GAP, щоб ви могли переглянути це пізніше, ви можете ввімкнути ведення журналу за допомогою функції `LogTo`, як наведено далі.
 
 ```gap
 LogTo("gap-intro.log");
 ```
 
-This will create a file file `gap-intro.log` in the current directory which
-will contain all subsequent input and output that appears on your terminal.
-To stop logging, you can call `LogTo` without arguments, as in `LogTo();`,
-or leave GAP. Note that `LogTo` blanks the file before starting, if it
-already exists!
+Це створить файл `gap-intro.log` у поточному каталозі, який міститиме всі подальші вхідні та вихідні дані, які з’являтимуться у вашому терміналі.
+Щоб припинити ведення журналу, ви можете викликати `LogTo` без аргументів, як у `LogTo();`, або залишити GAP. Зауважте, що `LogTo` очищає файл перед запуском, якщо він уже існує!
 
-It can be useful to leave some comments in the log file in case you
-return to it in the future. A comment in GAP starts with the symbol `#` and
-continues to the end of the line. You can enter the following after the
-GAP prompt:
+Може бути корисним залишити кілька коментарів у файлі журналу на випадок,
+якщо ви повернетеся до нього в майбутньому. Коментар у GAP починається з символу `#` і
+продовжується до кінця рядка. Ви можете ввести наступне після
+підказки GAP:
 
 ```gap
-# GAP Software Carpentry Lesson
+# Урок Software Carpentry GAP
 ```
 
-then after pressing the Return key, GAP will display a new prompt but the comment
-will be written to the log file.
+тоді після натискання клавіші Return GAP відобразить нову підказку, але коментар
+буде записаний у файл журналу.
 
 The log file records all interaction with GAP that happens after the call
 to `LogTo`, but not before. We can repeat our calculation from above
 if we want to record it as well. Instead of retyping it, we will use the Up and Down
-arrow keys to scroll the *command line history*. Repeat this until you see
+arrow keys to scroll the _command line history_. Repeat this until you see
 the formula again, then press Return (the location of the cursor in the command
 line does not matter):
 
@@ -140,7 +128,6 @@ universe := 6*7;
 
 - Finally, GAP uses `<>` to check if two things are not equal (rather than the `!=`
   you might have seen before).
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -203,7 +190,6 @@ which contain a (possibly empty) list of arguments.
 Check what happens if you forget to add brackets,
 e.g. type `LogTo;` and `Factorial;`
 We will explain the differences in these outputs later.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -293,7 +279,7 @@ not in any function at line 14 of *stdin*
 because the name of the GAP library function is `Factorial`. Using lowercase
 instead of uppercase or vice versa also affects name completion.
 
-Now let's consider the following problem: for a finite group *G*, calculate the
+Now let's consider the following problem: for a finite group _G_, calculate the
 average order of its elements (that is, the sum of orders of its elements divided
 by the order of the group). Where to start?
 
@@ -400,7 +386,7 @@ AsList(G);
   (1,3)(2,4), (1,4,2), (1,4,3), (1,4)(2,3) ]
 ```
 
-The returned object is a *list*. We would like to assign it to a variable
+The returned object is a _list_. We would like to assign it to a variable
 to explore and reuse. We forgot to do it when we were calculating it. Of
 course, we may use the command line history to restore the last command, edit
 it and call again. But instead, we will use `last` which is a special variable
@@ -439,7 +425,6 @@ gap> elts[1]; elts[3]; Length(elts);
 - Not required to contain objects of the same type
 
 - See more in [GAP Tutorial: Lists and Records](https://docs.gap-system.org/doc/tut/chap3.html)
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -538,7 +523,6 @@ Let's break this last part down:
 
 Compare these approaches. Which one would you prefer to use?
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 GAP has very helpful list manipulation tools. We will now show a few more examples.
@@ -606,7 +590,6 @@ false
 - `Filtered( elts, g -> 2^g = 2 );`
 
 - `Filtered( elts, g -> (1,2)^g = (1,2) );`
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
