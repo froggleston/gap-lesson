@@ -89,4 +89,4 @@ profiles:
 
 carpentry_description: Lesson Description
 
-varnish: carpentries/varnish@frog-tidy-hr-1
+varnish: carpentries/varnish@main
